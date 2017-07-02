@@ -1,0 +1,23 @@
+---
+title: "example plotly"
+author: "kkw"
+date: "2-7-2017"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(plotly)
+library(ggplot2)
+attach(mtcars)
+```
+
+
+## Slide with Plot
+
+```{r plot,fig.align="center",message=FALSE}
+plot_ly(mtcars,x=~hp,y=~mpg,z=~cyl,color=as.factor(cyl),alpha=1)%>%  
+layout(title = 'MPG plotted by HP per cylinder size, <br>(mtcars data set)' )
+
+```
+
